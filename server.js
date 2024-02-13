@@ -4,8 +4,9 @@ const mongoose = require('mongoose')
 const cors = require('cors')
 
 // require route files
-const reviewRoutes = require('./app/routes/review_routes')
 const userRoutes = require('./app/routes/user_routes')
+const reservationRoutes = require('./app/routes/reservation_routes')
+const reviewRoutes = require('./app/routes/review_routes')
 
 // require middleware
 const errorHandler = require('./lib/error_handler')
@@ -65,8 +66,9 @@ app.use(express.urlencoded({ extended: true }))
 app.use(requestLogger)
 
 // register route files
-app.use(reviewRoutes)
 app.use(userRoutes)
+app.use(reviewRoutes)
+app.use(reservationRoutes)
 
 // register error handling middleware
 // note that this comes after the route middlewares, because it needs to be

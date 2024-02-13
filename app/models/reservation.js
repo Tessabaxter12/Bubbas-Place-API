@@ -2,13 +2,13 @@ const mongoose = require('mongoose')
 
 const reservationSchema = new mongoose.Schema(
 	{
-		date: {
-			type: Date,
-			required: true,
-		},
 		owner: {
 			type: mongoose.Schema.Types.ObjectId,
 			ref: 'User',
+			required: true,
+		},
+		date: {
+			type: Date,
 			required: true,
 		},
 	},
