@@ -11,6 +11,10 @@ const router = express.Router()
 // CREATE
 // POST / reservations
 router.post('/reservations', requireToken, (req, res, next) => {
+	
+	console.log('Request body:');
+	console.log('User:');
+
 	// set owner of new reservations to be current user
 	req.body.reservation.owner = req.user.id
 	Reservation.create(req.body.reservation)
